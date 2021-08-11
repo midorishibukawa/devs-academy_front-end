@@ -97,9 +97,11 @@ main {
   height: 33vw;
   width: 100%;
   margin: 2rem 0 1rem 0;
-  background-image: url("../img/Rectangle3.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
+}
+.slides_main {
+  position: absolute;
+  z-index: 0;
+  width: 80%;
 }
 .slides_arrow {
   display: flex;
@@ -173,18 +175,6 @@ main {
   opacity: 0.6;
 }
 
-.industrial {
-  background-image: url("../img/Rectangle11.svg");
-}
-
-.modern {
-  background-image: url("../img/Rectangle12.svg");
-}
-
-.classic {
-  background-image: url("../img/Rectangle13.svg");
-}
-
 .style {
   display: flex;
   flex-direction: column;
@@ -205,6 +195,9 @@ main {
 .style_section_text {
   font-size: 1.8rem;
 }
+.style_section_image {
+  opacity: 0.6;
+}
 .style_section .withbg {
   position: absolute;
   z-index: 0;
@@ -212,7 +205,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  text-shadow: 0 0.25rem 0.5rem black;
+  text-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.5);
 }
 
 .contact {

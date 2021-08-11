@@ -110,9 +110,11 @@ main {
     height: 33vw;
     width: 100%; 
     margin: 2rem 0 1rem 0;
-    background-image: url("../img/Rectangle3.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    &_main {
+        position: absolute;
+        z-index: 0;
+        width: $body;
+    }
     &_arrow {
         display: flex;
         align-items: center;
@@ -187,18 +189,6 @@ main {
     opacity: 0.6;
 }
 
-.industrial {
-    background-image: url("../img/Rectangle11.svg");
-}
-
-.modern {
-    background-image: url("../img/Rectangle12.svg");
-}
-
-.classic {
-    background-image: url("../img/Rectangle13.svg");
-}
-
 .style {
     display: flex;
     flex-direction: column;
@@ -217,6 +207,10 @@ main {
         &_text {
             font-size: 1.8rem;
         }
+
+        &_image {
+            opacity: 0.6;
+        }
         .withbg {
             position: absolute;
             z-index: 0;
@@ -224,7 +218,7 @@ main {
             left: 50%;
             transform: translate(-50%, -50%);
             color: $background;
-            text-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 1);
+            text-shadow: 0 0.2rem 0.25rem rgba(0, 0, 0, 0.5);
         }
     }
 }
