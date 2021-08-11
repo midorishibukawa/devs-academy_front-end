@@ -34,6 +34,8 @@ header {
     position: fixed;
     z-index: 2;
     top: 0;
+    display: flex;
+    justify-content: center;
     height: 3rem;
     width: 100vw;
     background-color: $base-0;
@@ -59,8 +61,7 @@ button, .slides, .options_container, .style_section  {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    padding: 0 $margin 0 $margin;
+    width: $body;
     &_logo {
         display: flex;
         align-items: center;
@@ -195,14 +196,13 @@ main {
         align-items: center;
         justify-content: center;
         position: relative;
-        height: 5.5rem;
         width: 90%;
         margin: 0.75rem 0;
         &_text {
             font-size: 1.8rem;
         }
-
         &_image {
+            width: 100%;
             opacity: 0.6;
         }
         .withbg {
@@ -259,7 +259,7 @@ footer {
     width: 80%;
     padding: 2rem;
     img {
-        width: 40%;
+        width: 24rem;
     }
     &_text {
         display: flex;
@@ -286,5 +286,8 @@ footer {
 @media (min-resolution: 150dpi) {
     html {
         font-size: 32px;
-    } 
+    }
+    .nav, .container, .info {
+        width: 90%;
+    }
 }

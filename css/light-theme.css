@@ -28,6 +28,8 @@ header {
   position: fixed;
   z-index: 2;
   top: 0;
+  display: flex;
+  justify-content: center;
   height: 3rem;
   width: 100vw;
   background-color: #fff;
@@ -51,8 +53,7 @@ button:hover, .slides:hover, .options_container:hover, .style_section:hover {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
-  padding: 0 10% 0 10%;
+  width: 80%;
 }
 .nav_logo {
   display: flex;
@@ -187,7 +188,6 @@ main {
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 5.5rem;
   width: 90%;
   margin: 0.75rem 0;
 }
@@ -195,6 +195,7 @@ main {
   font-size: 1.8rem;
 }
 .style_section_image {
+  width: 100%;
   opacity: 0.6;
 }
 .style_section .withbg {
@@ -250,7 +251,7 @@ footer {
   padding: 2rem;
 }
 .info img {
-  width: 40%;
+  width: 24rem;
 }
 .info_text {
   display: flex;
@@ -276,6 +277,10 @@ footer {
 @media (min-resolution: 150dpi) {
   html {
     font-size: 32px;
+  }
+
+  .nav, .container, .info {
+    width: 90%;
   }
 }
 
