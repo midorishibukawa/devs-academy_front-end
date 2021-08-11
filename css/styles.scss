@@ -166,12 +166,6 @@ main {
             border-radius: 3rem;
             font-size: 1.2rem;
             color: $light-0;
-            .new {
-                background-color: $green;
-            }
-            .sale {
-                background-color: $yellow;
-            }
         }
         img {
             grid-column: 1 / 3;
@@ -181,6 +175,13 @@ main {
         }
     } 
 }
+
+.new {
+    background-color: $green;
+}
+.sale {
+    background-color: $yellow;
+} 
 
 .style {
     display: flex;

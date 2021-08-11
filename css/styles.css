@@ -154,17 +154,19 @@ main {
   font-size: 1.2rem;
   color: #fff;
 }
-.options_container_tag .new {
-  background-color: #51d174;
-}
-.options_container_tag .sale {
-  background-color: #dc972f;
-}
 .options_container img {
   grid-column: 1/3;
   grid-row: 1;
   display: block;
   width: 100%;
+}
+
+.new {
+  background-color: #51d174;
+}
+
+.sale {
+  background-color: #dc972f;
 }
 
 .style {
