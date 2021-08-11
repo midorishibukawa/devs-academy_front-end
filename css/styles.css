@@ -101,7 +101,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.slides_left, .slides_right {
+.slides_arrow {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,6 +111,7 @@ main {
   background-color: rgba(0, 0, 0, 0.3);
   margin: 0.5rem;
 }
+
 .new {
   background-color: #51d174;
 }
@@ -217,14 +218,14 @@ main {
 .contact {
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 .contact_form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 .contact_form input, .contact_form textarea {
   margin: 0.5rem;
@@ -232,6 +233,15 @@ main {
 }
 .contact_form #message {
   height: 8rem;
+}
+
+.send {
+  margin: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 3rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #dc972f;
 }
 
 footer {
