@@ -141,7 +141,7 @@ main {
   align-self: center;
   justify-self: start;
   margin: 2rem 1rem 1rem 1rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 .options_container_tag {
   grid-column: 2;
@@ -160,12 +160,10 @@ main {
   display: block;
   width: 100%;
 }
-
-.new {
+.options_container .new {
   background-color: #51d174;
 }
-
-.sale {
+.options_container .sale {
   background-color: #dc972f;
 }
 
