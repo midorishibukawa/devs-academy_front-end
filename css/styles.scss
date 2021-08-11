@@ -1,0 +1,292 @@
+@import 'reset.css';
+
+$background: #fff;
+$background-2: #eee;
+$foreground: #777;
+$foreground-2: #aaa;
+$background-3: #333;
+
+$margin: 10%;
+$body: 100% - 2 * $margin;
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: $foreground;
+    background-color: $background;
+}
+
+h1, h2 {
+    display: inline;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+button {
+    height: 2rem;
+    font-size: 1rem;
+    color: $foreground;
+    background-color: transparent;
+    border: none;
+}
+
+main, header, footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    height: 3rem;
+    width: 100vw;
+    background-color: $background;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+main {
+    flex-direction: column;
+    justify-content: center;
+    margin: 3rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $body;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10% 0 10%;
+    &_logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &_menu {
+        display: flex;
+        align-items: baseline;
+        &_open {
+            font-size: 1.20rem;
+            color: $foreground-2;
+        }
+    }
+    h2 {
+        width: 5rem;
+        color: $foreground-2;
+    }
+}
+
+.slides {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 33vw;
+    width: 100%; 
+    margin: 2rem 0 1rem 0;
+    background-image: url("../img/Rectangle3.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    &_left, &_right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 3rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        margin: 0.5rem;
+    }
+    &_left {
+    }
+}
+
+.new {
+    background-color: #51d174;
+}
+
+.sale {
+    background-color: #dc972f;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem 0 1rem 0;
+    &_container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto 2rem auto;
+        width: 45%;
+        background-color: $background-2;
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+        &_description {
+            grid-column: 1 / 3;
+            grid-row: 3;
+            padding: 1rem;
+            font-size: 0.90rem;
+        }
+        &_price {
+            grid-column: 1;
+            grid-row: 2;
+            align-self: center;
+            justify-self: start;
+            margin: 2rem 1rem 1rem 1rem;
+            font-size: 1.3rem;
+        }
+        &_tag {
+            grid-column: 2;
+            grid-row: 2;
+            align-self: center;
+            justify-self: end;
+            margin: 2rem 1rem 1rem 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 3rem;
+            font-size: 1.2rem;
+            color: $background;
+        }
+        img {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            display: block;
+            width: 100%;
+        }
+    } 
+}
+
+.industrial, .modern, .classic {
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+}
+
+.industrial {
+    background-image: url("../img/Rectangle11.svg");
+}
+
+.modern {
+    background-image: url("../img/Rectangle12.svg");
+}
+
+.classic {
+    background-image: url("../img/Rectangle13.svg");
+}
+
+.style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 3rem 0;
+    &_section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 5.5rem;
+        width: 90%;
+        margin: 0.75rem 0;
+        &_text {
+            font-size: 1.8rem;
+        }
+        .withbg {
+            position: absolute;
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $background;
+            text-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 1);
+        }
+    }
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    &_form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        input, textarea {
+            margin: 0.5rem;
+            width: 16rem;
+        }
+        #message {
+            height: 8rem;
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: $background-3;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    padding: 2rem;
+    img {
+        width: 40%;
+    }
+    &_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+            display: inline;
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+        p {
+        color: $background;
+            margin: 0.5rem;
+        }
+        &_social {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+    }
+}
+
+@media (min-resolution: 150dpi) {
+    html {
+        font-size: 32px;
+    } 
+}
