@@ -167,7 +167,7 @@ main {
             font-size: 1.2rem;
             color: $light-0;
         }
-        img {
+        &_image {
             grid-column: 1 / 3;
             grid-row: 1;
             display: block;
@@ -181,7 +181,7 @@ main {
 }
 .sale {
     background-color: $yellow;
-} 
+}
 
 .style {
     display: flex;
