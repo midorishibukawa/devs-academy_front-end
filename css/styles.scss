@@ -1,6 +1,6 @@
 @import 'reset.css';
-// @import 'dark-theme.scss';
-@import 'light-theme.scss';
+@import 'dark-theme.scss';
+// @import 'light-theme.scss';
 
 $margin: 10%;
 $body: 100% - 2 * $margin;
@@ -108,7 +108,8 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 33vw;
+    height: min-content;
+    height: 40vw;
     width: 100%; 
     margin: 2rem 0 1rem 0;
     &_main {
@@ -287,7 +288,7 @@ footer {
     html {
         font-size: 32px;
     }
-    .nav, .container, .info {
+    .nav, .container, .info, .slides_main {
         width: 90%;
     }
 }
