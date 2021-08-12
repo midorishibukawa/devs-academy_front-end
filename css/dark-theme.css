@@ -6,6 +6,8 @@ html {
 }
 
 body {
+  z-index: 0;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,6 +56,7 @@ header .logo .title {
   margin-right: 1rem;
 }
 header .logo .tagline {
+  font-size: 1rem;
   width: 5rem;
   color: #aaa;
 }
@@ -64,10 +67,9 @@ header .menu {
   align-items: baseline;
 }
 header .menu button {
-  height: 2rem;
-  font-size: 1rem;
   color: #eee;
   background-color: transparent;
+  font-size: 1rem;
 }
 header .menu_open {
   font-size: 1.2rem;
@@ -94,7 +96,6 @@ main .slides {
 }
 main .slides_main {
   position: absolute;
-  z-index: 0;
   width: 80%;
 }
 main .slides_arrow {
@@ -170,13 +171,24 @@ main .style {
   width: 100%;
   padding: 3rem 0;
 }
+main .style .industrial {
+  background-image: url("../img/Rectangle11.svg");
+}
+main .style .modern {
+  background-image: url("../img/Rectangle12.svg");
+}
+main .style .classic {
+  background-image: url("../img/Rectangle13.svg");
+}
 main .style_section {
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
+  height: 9.5vw;
   width: 90%;
   margin: 0.75rem 0;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 main .style_section_text {
   font-size: 1.8rem;
@@ -186,12 +198,14 @@ main .style_section_image {
   opacity: 0.6;
 }
 main .style_section .withbg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
   color: #fff;
+  background-color: #fff6;
   text-shadow: 0 0.2rem 0.25rem #0008;
 }
 main .contact {
@@ -231,7 +245,8 @@ footer {
   padding: 2rem 0;
 }
 footer .map {
-  height: 12rem;
+  height: 16rem;
+  width: 24rem;
   margin: 1rem;
 }
 footer .text {
@@ -263,7 +278,7 @@ footer .text_social .dark {
     font-size: 32px;
   }
 }
-@media (max-width: 768px) {
+@media (min-resolution: 150dpi), (max-width: 768px) {
   header {
     grid-template-columns: 5% auto auto 5%;
   }
@@ -271,7 +286,7 @@ footer .text_social .dark {
   main {
     width: 90%;
   }
-  main .slides {
+  main .slides, main .style {
     width: 100vw;
   }
   main .slides_main {
@@ -283,14 +298,18 @@ footer .text_social .dark {
   main .options_container {
     width: 100%;
   }
+  main .style_section {
+    height: 13.5vw;
+    width: 100%;
+  }
 
   footer {
     align-items: center;
     flex-direction: column;
   }
   footer .map {
-    height: auto;
-    max-height: 50vw;
+    height: 24rem;
+    max-height: 24rem;
     width: 90%;
   }
   footer .text {

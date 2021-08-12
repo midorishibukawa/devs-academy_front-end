@@ -1,6 +1,6 @@
 @import 'reset.css';
-// @import 'dark-theme.scss';
-@import 'light-theme.scss';
+@import 'dark-theme.scss';
+// @import 'light-theme.scss';
 
 $margin: 10%;
 $body: 100% - 2 * $margin;
@@ -12,6 +12,8 @@ html {
 }
 
 body {
+    z-index: 0;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +34,6 @@ button, .slides, .options_container, .style_section  {
     }
 }
 
-
 header {
     position: fixed;
     z-index: 2;
@@ -45,37 +46,44 @@ header {
     width: 100vw;
     background-color: $base-0;
     box-shadow: 0 0 1rem $shadow;
+
     .logo {
         grid-area: 1 / 2 / 1 / 2;
         justify-self: start;
         display: flex;
         align-items: center;
         justify-content: center;
+
         .title, .tagline {
         display: inline;
         overflow-wrap: break-word;
         }
+
         .title {
             font-size: 2.5rem;
             font-weight: 600;
             margin-right: 1rem;
         }
+
         .tagline {
+            font-size: 1rem;
             width: 5rem;
             color: $base-2;
         }
     }
+
     .menu {
         grid-area: 1 / 3 / 1 / 3;
         justify-self: end;
         display: flex;
         align-items: baseline;
+
         button {
-            height: 2rem;
-            font-size: 1rem;
             color: $base-3;
             background-color: transparent;
+            font-size: 1rem;
         }
+
         &_open {
             font-size: 1.20rem;
             color: $base-2;
@@ -90,6 +98,7 @@ main {
     justify-content: center;
     width: $body;
     margin: 3rem;
+
     .slides {
         display: flex;
         flex-direction: row;
@@ -99,11 +108,12 @@ main {
         height: 40vw;
         width: 100%; 
         margin: 2rem 0 1rem 0;
+
         &_main {
             position: absolute;
-            z-index: 0;
             width: 80%;
         }
+
         &_arrow {
             z-index: 1;
             display: flex;
@@ -116,6 +126,7 @@ main {
             margin: 0.5rem;
         }
     }
+    
     .options {
         display: flex;
         flex-direction: row;
@@ -123,6 +134,7 @@ main {
         justify-content: space-between;
         width: 100%;
         margin: 1rem 0 1rem 0;
+
         &_container {
             display: grid;
             grid-template-columns: 50% 50%;
@@ -130,13 +142,15 @@ main {
             width: 45%;
             background-color: $base-1;
             margin: 1rem;
-            box-shadow: 0 0.25rem 0.75rem $shadow;        
+            box-shadow: 0 0.25rem 0.75rem $shadow;   
+
             &_description {
                 grid-column: 1 / 3;
                 grid-row: 3;
                 padding: 1rem;
                 font-size: 0.90rem;
             }
+
             &_price {
                 grid-column: 1;
                 grid-row: 2;
@@ -145,6 +159,7 @@ main {
                 margin: 2rem 1rem 1rem 1rem;
                 font-size: 1.3rem;
             }
+
             &_tag {
                 grid-column: 2;
                 grid-row: 2;
@@ -156,21 +171,25 @@ main {
                 font-size: 1.2rem;
                 color: #fff;
             }
+
             &_image {
                 grid-column: 1 / 3;
                 grid-row: 1;
                 display: block;
                 width: 100%;
             }
+
             .new {
                 background-color: $green;
             }
+
             .sale {
                 background-color: $yellow;
                 
             }
         }
     }
+
     .style {
         display: flex;
         flex-direction: column;
@@ -178,48 +197,73 @@ main {
         justify-content: center;
         width: 100%;
         padding: 3rem 0;
+
+        .industrial {
+            background-image: url('../img/Rectangle11.svg');
+        }
+
+        .modern {
+            background-image: url('../img/Rectangle12.svg');
+        }
+
+        .classic {
+            background-image: url('../img/Rectangle13.svg');
+        }
+
         &_section {
             display: flex;
             align-items: center;
-            justify-content: center;
             position: relative;
+            height: 9.5vw;
             width: 90%;
             margin: 0.75rem 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+
             &_text {
                 font-size: 1.8rem;
             }
+
             &_image {
                 width: 100%;
                 opacity: 0.6;
             }
+
             .withbg {
+                display:flex;
+                align-items: center;
+                justify-content: center;
                 position: absolute;
-                z-index: 0;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                height: 100%;
+                width: 100%;
                 color: #fff;
+                background-color: #fff6;
                 text-shadow: 0 0.2rem 0.25rem #0008;
             }
+
         }
     }
     .contact {
         display: flex;
         justify-content: center;
         width: 100%;
+
         &_form {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             width: 100%;
+
             input, textarea {
                 margin: 0.5rem;
                 width: 16rem;
             }
+
             #message {
                 height: 8rem;
             }
+
             .send {
                 margin: 1rem;
                 padding: 0.25rem 0.75rem;
@@ -239,23 +283,29 @@ footer {
     width: 100vw;
     background-color: $base-4;
     padding: 2rem 0;
+
     .map {
         height: 16rem;
+        width: 24rem;
         margin: 1rem;
     }
+
     .text {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+
         .social-media {
             display: inline;
             height: 1.5rem;
             width: 1.5rem;
         }
+
         p {
             color: $base-0;
             margin: 0.5rem;
         }
+
         &_social {
             width: 50%;
             display: flex;
@@ -274,21 +324,36 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media  (min-resolution: 150dpi),
+        (max-width: 768px) {
     header {
         grid-template-columns: 5% auto auto 5%;
     }
+
     main {
         width: 90%;
-        .slides {
+
+        .slides, .style {
             width: 100vw;
+        }
+
+        .slides {
             &_main {
                 width: 100%;
             }
         }
+
         .options {
             flex-direction: column;
+
             &_container {
+                width: 100%;
+            }
+        }
+
+        .style {
+            &_section {
+                height: 13.5vw;
                 width: 100%;
             }
         }
@@ -296,11 +361,13 @@ footer {
     footer {
         align-items: center;
         flex-direction: column;
+
         .map {
-            height: auto;
+            height: 24rem;
             max-height: 24rem;
             width: 90%;
         }
+
         .text {
             align-items: center;
         }
