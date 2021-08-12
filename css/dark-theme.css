@@ -239,8 +239,9 @@ main .contact_form input, main .contact_form textarea {
   margin: 0.5rem;
   width: 16rem;
 }
-main .contact_form #message {
-  height: 8rem;
+main .contact_form_message {
+  height: 12rem;
+  resize: none;
 }
 main .contact_form .send {
   margin: 1rem;
@@ -288,11 +289,6 @@ footer .text_social .dark {
   filter: brightness(0.2);
 }
 
-@media (min-resolution: 150dpi) {
-  html {
-    font-size: 32px;
-  }
-}
 @media (min-resolution: 150dpi), (max-width: 768px) {
   header {
     grid-template-columns: 5% auto auto 5%;

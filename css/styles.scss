@@ -277,8 +277,9 @@ main {
                 width: 16rem;
             }
 
-            #message {
-                height: 8rem;
+            &_message {
+                height: 12rem;
+                resize: none;
             }
 
             .send {
@@ -335,11 +336,6 @@ footer {
     }
 }
 
-@media (min-resolution: 150dpi) {
-    html {
-        font-size: 32px;
-    }
-}
 
 @media  (min-resolution: 150dpi),
         (max-width: 768px) {
