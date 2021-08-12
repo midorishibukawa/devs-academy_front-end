@@ -277,6 +277,9 @@ footer {
             display: flex;
             justify-content: space-between;
             padding: 0 1rem;
+            .dark {
+                filter: brightness(0.2);
+            }
         }
     }
 }

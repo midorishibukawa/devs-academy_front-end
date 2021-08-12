@@ -271,6 +271,9 @@ footer {
   justify-content: space-between;
   padding: 0 1rem;
 }
+.info_text_social .dark {
+  filter: brightness(0.2);
+}
 
 @media (min-resolution: 150dpi) {
   html {
