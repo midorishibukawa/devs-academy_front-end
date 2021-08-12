@@ -1,0 +1,132 @@
+@import 'reset.css';
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #9b9b9b;
+  z-index: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+header, footer {
+  color: #fff;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 2.5% auto auto 2.5%;
+  grid-template-rows: auto;
+  height: 5rem;
+  width: 100%;
+  background-color: #00796b;
+}
+.nav_logo {
+  grid-area: 1/2/1/2;
+  justify-self: start;
+}
+.nav_menu {
+  grid-area: 1/3/3/3;
+  justify-self: end;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+}
+.nav_menu_option {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 100%;
+  font-size: 1.25rem;
+  background-color: #c4c4c4;
+}
+
+.index, .about {
+  flex-direction: row;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+main h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00796b;
+  margin: 0 1rem 1rem 0;
+}
+main p {
+  font-size: 1.25rem;
+}
+main .index-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 60%;
+}
+main .index-left img {
+  width: 100%;
+}
+main .index-right {
+  width: 40%;
+  padding: 3%;
+}
+main .about {
+  display: flex;
+  flex-direction: row;
+}
+main .about-left {
+  width: 60%;
+}
+main .about-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 40% img;
+  width-width: 100%;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  main .index-left {
+    width: 100%;
+  }
+  main .index-right {
+    width: 95%;
+  }
+  main .index-left {
+    height: 75vw;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
