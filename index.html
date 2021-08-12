@@ -27,12 +27,12 @@
         <section class="slides">
             <img class="slides_main" src="img/Rectangle3.svg" alt="A modern-looking loft with an open concept kitchen">
             
-            <button class="slides_arrow">
-                <img src="img/arrow-left.svg">
+            <button id="slide-left" class="slides_arrow left">
+                <img class="slides_arrow_img" src="img/arrow-left.svg">
             </button>
 
-            <button class="slides_arrow">
-                <img src="img/arrow-right.svg">
+            <button id="slide-right" class="slides_arrow right">
+                <img class="slides_arrow_img" src="img/arrow-right.svg">
             </button>
         </section>
 
@@ -94,14 +94,20 @@
         <section class="text">
             <p>LOVT - You love, your loft</p>
             <p>Broad St, Newark, NJ 07012 - USA</p>
-            <p>+1 (973) 854-555-548</p>
-            <p>contact@lovtrealstate.com</p>
+            <a href="tel:+1973854555348">
+                <p>+1 (973) 854-555-548</p>
+            </a>
+            <a href="mailto:contact@lovtrealstate.com" target="_blank">
+                <p>contact@lovtrealstate.com</p>
+            </a>
             <p>OUR SOCIAL MEDIAS:</p>
             
             <div class="text_social">
                 <img class="social-media" src="img/instgram.svg">
                 <img class="social-media" src="img/facebook.svg">
-                <img class="social-media" src="img/whatsapp.svg">
+                <a href="https://api.whatsapp.com/send/?phone=1973854555548" target="_blank">
+                    <img class="social-media" src="img/whatsapp.svg"></a>
+                </a>
             </div>
         </section>
     </footer>

@@ -28,6 +28,10 @@ button {
     border: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 button, .slides, .options_container, .style_section  {
     &:hover {
         cursor: pointer;
@@ -124,6 +128,18 @@ main {
             border-radius: 3rem;
             background-color: #0004;
             margin: 0.5rem;
+        
+            &_img {
+            height: 1.5rem;
+            width: 1.5rem;
+            }
+        }
+        
+        .left {
+            padding: 0 0.15rem 0 0;
+        }
+        .right {
+            padding: 0 0 0 0.15rem;
         }
     }
     
@@ -157,7 +173,7 @@ main {
                 align-self: center;
                 justify-self: start;
                 margin: 2rem 1rem 1rem 1rem;
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
 
             &_tag {
@@ -165,6 +181,7 @@ main {
                 grid-row: 2;
                 align-self: center;
                 justify-self: end;
+                width: 2rem;
                 margin: 2rem 1rem 1rem 1rem;
                 padding: 0.25rem 0.75rem;
                 border-radius: 3rem;
@@ -293,7 +310,7 @@ footer {
     .text {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
 
         .social-media {
             display: inline;
@@ -310,7 +327,7 @@ footer {
             width: 50%;
             display: flex;
             justify-content: space-between;
-            padding: 0 1rem;
+            padding: 1rem 2rem;
             .dark {
                 filter: brightness(0.2);
             }
@@ -353,7 +370,8 @@ footer {
 
         .style {
             &_section {
-                height: 13.5vw;
+                background-size: cover;
+                height: 24vw;
                 width: 100%;
             }
         }

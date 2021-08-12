@@ -22,6 +22,10 @@ button {
   border: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 button:hover, .slides:hover, .options_container:hover, .style_section:hover {
   cursor: pointer;
 }
@@ -109,6 +113,16 @@ main .slides_arrow {
   background-color: #0004;
   margin: 0.5rem;
 }
+main .slides_arrow_img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+main .slides .left {
+  padding: 0 0.15rem 0 0;
+}
+main .slides .right {
+  padding: 0 0 0 0.15rem;
+}
 main .options {
   display: flex;
   flex-direction: row;
@@ -138,13 +152,14 @@ main .options_container_price {
   align-self: center;
   justify-self: start;
   margin: 2rem 1rem 1rem 1rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 main .options_container_tag {
   grid-column: 2;
   grid-row: 2;
   align-self: center;
   justify-self: end;
+  width: 2rem;
   margin: 2rem 1rem 1rem 1rem;
   padding: 0.25rem 0.75rem;
   border-radius: 3rem;
@@ -252,7 +267,7 @@ footer .map {
 footer .text {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 }
 footer .text .social-media {
   display: inline;
@@ -267,7 +282,7 @@ footer .text_social {
   width: 50%;
   display: flex;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem 2rem;
 }
 footer .text_social .dark {
   filter: brightness(0.2);
@@ -299,7 +314,8 @@ footer .text_social .dark {
     width: 100%;
   }
   main .style_section {
-    height: 13.5vw;
+    background-size: cover;
+    height: 24vw;
     width: 100%;
   }
 
