@@ -13,6 +13,8 @@ html {
 
 body {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
@@ -46,14 +48,6 @@ button, .slides, .options_container, .style_section  {
     &:hover {
         cursor: pointer;
     }
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: $body;
 }
 
 .nav {
@@ -98,8 +92,11 @@ button, .slides, .options_container, .style_section  {
 
 
 main {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    width: $body;
     margin: 3rem;
 }
 
@@ -288,7 +285,7 @@ footer {
     html {
         font-size: 32px;
     }
-    .nav, .container, .info, .slides_main {
+    .nav, .container, .info {
         width: 90%;
     }
 }
