@@ -299,8 +299,21 @@ main img {
   }
 }
 @media (max-width: 916px) {
+  html {
+    font-size: 12px;
+  }
+
+  h1, h2 {
+    text-align: center !important;
+    justify-self: center !important;
+  }
+
+  p, li {
+    text-align: justify;
+  }
+
   h1, h2, h3, p, li {
-    padding: 0;
+    padding: 0 0 1rem 0;
   }
 
   header {
@@ -325,8 +338,7 @@ main img {
   }
 
   .txt {
-    padding: 0 2.5% 0 2.5%;
-    text-align: justify;
+    padding: 0 3% 0 2%;
   }
 
   .index {
@@ -340,10 +352,11 @@ main img {
     grid-template: "title" auto "img" auto "txt" auto "vid" auto "extra" auto/100%;
     place-items: stretch stretch;
   }
-  .about h1 {
-    justify-self: center;
+  .about iframe {
+    height: 56.25vw;
+    width: 100%;
   }
-  .about_img {
+  .about img {
     width: 100%;
   }
 
