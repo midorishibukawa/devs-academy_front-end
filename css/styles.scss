@@ -1,17 +1,29 @@
 @import 'reset.css';
 
 $primary: #00796b;
+$title: #009688;
 $secondary: #fff;
 $text: #9b9b9b;
-$footer: #c4c4c4;
+$footer-color: #c4c4c4;
+
+$header-size: 4rem;
+$footer-size: 3rem;
+$margin: 2.5%;
+
+
+$rows: [header] $header-size [main] auto [footer] $footer-size;
+$columns: [margin-left] $margin [main] auto [margin-right] $margin;
+$grid: $rows / $columns;
 
 * {
     z-index: inherit;
-    text-justify: inter-word;
 }
 
-html, body, main, .index_img, .about_img {
-    height: 100%;
+html, body {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+.index_img, .about_img {
     width: 100%;
 }
 
@@ -25,10 +37,16 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template:
+        "header" 4rem
+        "main" auto
+        "footer" 3rem
+        / auto;
+}
+
+img {
+    object-fit: contain;
 }
 
 a, button {
@@ -36,11 +54,20 @@ a, button {
     text-decoration: none;
     background-color: transparent;
     border: none;
+    &:hover {
+        cursor: pointer;
+    }    
 }
 
 h1, h2 {
     height: auto;
     color: $primary;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $title;
 }
 
 b {
@@ -49,13 +76,9 @@ b {
 
 
 main {
-    justify-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 95%;
-    padding: 4rem 0 3rem 0;
+    grid-area: main;
+    display: grid;
+    padding: 4rem 0 4rem 0;
 }
 
 .active {
@@ -68,37 +91,40 @@ main {
 }
 
 .nav {
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 0;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template:
+        "logo menu" 4rem
+        / 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    height: 4rem;
+    height: $header-size;
     width: 100%;
     background-color: $primary;
     font-size: 1.125rem;
     color: $secondary;
-    &_logo, &_menu, &_hamburger {
-        padding: 0 5%;
-    }
     &_logo {
+        grid-area: logo;
         height: 100%;
+        padding-left: 2.5%;
         img {
             height: 100%;
         }
     }
     &_menu{
+        grid-area: menu;
+        justify-self: end;
         display: flex;
         flex-direction: row;
+        padding-right: 2.5%;
         &_option {
             margin: 0 0 0 1rem;
         }
         &.active {
             z-index: 1;
             position: fixed;
-            top: 4rem;
+            top: $header-size;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
@@ -108,13 +134,19 @@ main {
             color: $text;
             background-color: #fff;
             padding: 0;
+            animation: drop .5s;
+            .nav_menu_option {
+                animation: appear .5s;
+            }
         }
     }
     &_hamburger {
         visibility: hidden;
-        position: fixed;
+        grid-area: menu;
+        justify-self: end;
         font-size: 1.5rem;
         margin-top: .5rem;
+        padding-right: 10%;
     }
 }
 
@@ -123,36 +155,37 @@ main {
     z-index: 2;
     position: fixed;
     bottom: 0;
-    background-color: $footer;
+    background-color: $footer-color;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 3rem;
+    height: $footer-size;
     width: 100%;
     color: $secondary;
 }
 
 .index {
-    flex-direction: row;
+    grid-template: auto / auto auto;
+    grid-template-areas:
+        "img txt";
+    place-items: center center;
     &_img {
-        height: 100%;
+        grid-area: img;
+        height: auto;
         width: 100%;
-        max-width: 30rem;
-        background: no-repeat center url('../img/ilustracao-banner.png');
-        background-size: contain;
+        max-height: 443px;
+        max-width: 749px;
     }
     &_txt {
+        grid-area: txt;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         gap: 1rem;
         height: 100%;
-        max-width: 30rem; 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
+        max-width: 30rem;
+        padding-right: 2.5%;
         p {
             font-size: 1.25rem;
         }
@@ -160,22 +193,87 @@ main {
 }
 
 .about {
-    &_top {
-        h1 {
-            font-size: 3.75rem;
-            font-weight: 900;
-        }
+    grid-template:
+        "txt img" auto
+        "vid vid" auto
+        "extra extra" auto
+        / auto auto;
+    place-items: start center;
+    h1 {
+        font-size: 3.75rem;
+        font-weight: 900;
+        padding-bottom: 2rem;
     }
-    &_bottom {
-        
+    h2, p {
+        padding: 0 0 1rem 0;
+    }
+    h2 {
+        font-size: 2.25rem; 
+    }
+    ol, li {
+        padding-bottom: .5rem;
+    }
+    p, li {
+        font-size: 1.25rem;
+    }
+    li {
+        list-style: inside decimal;
+    }
+    &_txt {
+        grid-area: txt;
+        justify-self: end;
+        max-width: 60rem;
+        padding-left: 4rem;
+    }
+    &_img {
+        grid-area: img;
+        place-self: end start;
+        max-height: 410px;
+        max-width: 575px; 
+    }
+    &_vid {
+        grid-area: vid;
+        margin: 2rem 0 2rem 0;
+    }
+    &_extra {
+        grid-area: extra;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 60rem;
+        padding: 0 4rem 0 4rem;
+        text-align: center;
     }
 }
 
-@media (max-width: 872px) {
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes drop {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: calc(100% - 4rem);
+    }
+}
+
+@media (max-width: 916px) {
     header {
         padding: 0;
         .nav {
             &_logo {
+                padding: 0;
             }
             &_menu {
                 visibility: hidden;
@@ -188,15 +286,34 @@ main {
             }
         }
     }
+
+    main {
+        padding: 0;
+    }
+
+    .txt {
+        padding: 0 5% 0 2.5%;
+    }
+
     .index {
-        flex-direction: column;
-        &_img {
-            height: 60%;
-            width: 100vw;
-        }
+        grid-template:
+            "img" auto
+            "txt" auto
+            / auto;
         &_txt {
             justify-content: start;
-            padding: 0;
+            padding-left: 2.5%;
+        }
+    }
+    .about {
+        grid-template:
+            "img" auto
+            "txt" auto
+            "vid" auto
+            "extra" auto
+                / auto;
+        &_img {
+            width: 100%;
         }
     }
 }

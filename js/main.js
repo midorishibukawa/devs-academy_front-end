@@ -13,6 +13,7 @@ closeMenuBtn.onclick = menuToggle;
 
 var docWidth = document.documentElement.offsetWidth;
 
+// check for page element overflow
 [].forEach.call(
   document.querySelectorAll('*'),
   function(el) {
