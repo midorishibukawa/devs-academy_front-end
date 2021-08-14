@@ -4,7 +4,7 @@ $primary: #00796b;
 $title: #009688;
 $secondary: #fff;
 $text: #9b9b9b;
-$footer-color: #c4c4c4;
+$footer-color: #c4c4c4c4;
 
 $header-size: 4rem;
 $footer-size: 3rem;
@@ -21,7 +21,7 @@ $grid: $rows / $columns;
 
 html, body {
     min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw;
 }
 .index_img, .about_img {
     width: 100%;
@@ -43,6 +43,7 @@ body {
         "main" auto
         "footer" 3rem
         / auto;
+    overflow-x: hidden;
 }
 
 img {
@@ -59,26 +60,59 @@ a, button {
     }    
 }
 
-h1, h2 {
-    height: auto;
-    color: $primary;
+b {
+    font-weight: 700;
 }
 
-.title {
+p {
+    padding-bottom: 2rem;
+}
+
+h1, h2, h3, p, ol, ul {
+    max-width: 40rem;
+}
+
+
+.main-title {
     font-size: 2.5rem;
     font-weight: 700;
     color: $title;
 }
 
-b {
-    font-weight: 700;
+.title {
+    font-size: 3.75rem;
+    font-weight: 900;
+    color: $primary;
+    padding: 0 0 2rem 2rem;
 }
 
+.txt {
+    max-width: 30rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    color: $primary;
+}
+
+p, li {
+    font-size: 1.25rem;
+}
+
+li {
+    list-style: inside decimal;
+}
 
 main {
     grid-area: main;
+    place-self: center center;
     display: grid;
-    padding: 4rem 0 4rem 0;
+    max-width: 1280px;
+    padding: 2rem 0 2rem 0;
+    img {
+        height: auto;
+        width: 100%;
+    }
 }
 
 .active {
@@ -92,21 +126,27 @@ main {
 
 .nav {
     z-index: 2;
+
     position: fixed;
     top: 0;
+
     display: grid;
     grid-template:
         "logo menu" 4rem
         / 1fr 1fr;
     align-items: center;
+
     height: $header-size;
     width: 100%;
-    background-color: $primary;
+
     font-size: 1.125rem;
     color: $secondary;
+    background-color: $primary;
+    
     &_logo {
         grid-area: logo;
         height: 100%;
+        justify-content: start;
         padding-left: 2.5%;
         img {
             height: 100%;
@@ -134,7 +174,7 @@ main {
             color: $text;
             background-color: #fff;
             padding: 0;
-            animation: drop .5s;
+            animation: drop .25s;
             .nav_menu_option {
                 animation: appear .5s;
             }
@@ -165,12 +205,13 @@ main {
 }
 
 .index {
-    grid-template: auto / auto auto;
-    grid-template-areas:
-        "img txt";
-    place-items: center center;
+    grid-template:
+        "img txt " auto
+            / 1fr 1fr;
+    align-items: center;
     &_img {
         grid-area: img;
+        justify-self: end;
         height: auto;
         width: 100%;
         max-height: 443px;
@@ -178,62 +219,45 @@ main {
     }
     &_txt {
         grid-area: txt;
+        justify-self: start;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         gap: 1rem;
         height: 100%;
-        max-width: 30rem;
         padding-right: 2.5%;
-        p {
-            font-size: 1.25rem;
-        }
     }
 }
 
 .about {
     grid-template:
+        "title img" auto
         "txt img" auto
         "vid vid" auto
         "extra extra" auto
-        / auto auto;
+        / 1fr 1fr;
     place-items: start center;
+    iframe {
+        grid-area: vid;
+        height: 28.125vw;
+        width: 50%;
+        margin: 2rem 0 2rem 0;
+    }
     h1 {
-        font-size: 3.75rem;
-        font-weight: 900;
-        padding-bottom: 2rem;
-    }
-    h2, p {
-        padding: 0 0 1rem 0;
-    }
-    h2 {
-        font-size: 2.25rem; 
-    }
-    ol, li {
-        padding-bottom: .5rem;
-    }
-    p, li {
-        font-size: 1.25rem;
-    }
-    li {
-        list-style: inside decimal;
+        grid-area: title;
+        justify-self: start;
     }
     &_txt {
         grid-area: txt;
         justify-self: end;
-        max-width: 60rem;
-        padding-left: 4rem;
+        padding-left: 2rem;
     }
     &_img {
         grid-area: img;
-        place-self: end start;
+        place-self: end center;
         max-height: 410px;
-        max-width: 575px; 
-    }
-    &_vid {
-        grid-area: vid;
-        margin: 2rem 0 2rem 0;
+        max-width: 410px;
     }
     &_extra {
         grid-area: extra;
@@ -242,8 +266,56 @@ main {
         align-items: center;
         justify-content: center;
         max-width: 60rem;
-        padding: 0 4rem 0 4rem;
         text-align: center;
+    }
+}
+
+.services {
+    display: grid;
+    grid-template:
+        "title ." auto
+        "img1 txt1" auto
+        "txt2 img2" auto
+        "img3 txt3" auto
+            / auto auto;
+        align-items: center;
+    h1 {
+        grid-area: title;
+        place-self: start start;
+        padding-left: 2rem;
+    }
+    &_img1 {
+        grid-area: img1;
+        justify-self: end;
+        max-height: 357px;
+        max-width: 530px;
+    }
+    &_img2 {
+        grid-area: img2;
+        justify-self: start;
+        max-height: 384px;
+        max-width: 530px;
+    }
+    &_img3 {
+        grid-area: img3;
+        justify-self: end;
+        max-height: 286px;
+        max-width: 530px;
+    }
+    &_txt1 {
+        grid-area: txt1;
+        justify-self: start;
+        padding-right: 2rem;
+    }
+    &_txt2 {
+        grid-area: txt2;
+        justify-self: end;
+        padding-left: 2rem;
+    }
+    &_txt3 {
+        grid-area: txt3;
+        justify-self: start;
+        padding-right: 2rem;
     }
 }
 
@@ -269,6 +341,9 @@ main {
 }
 
 @media (max-width: 916px) {
+    h1, h2, h3, p, li {
+        padding: 0;
+    }
     header {
         padding: 0;
         .nav {
@@ -288,11 +363,13 @@ main {
     }
 
     main {
-        padding: 0;
+        place-items: center center !important;
+        place-content: center center !important;
     }
 
     .txt {
-        padding: 0 5% 0 2.5%;
+        padding: 0 2.5% 0 2.5%;
+        text-align: justify;
     }
 
     .index {
@@ -302,18 +379,32 @@ main {
             / auto;
         &_txt {
             justify-content: start;
-            padding-left: 2.5%;
         }
     }
     .about {
         grid-template:
+            "title" auto
             "img" auto
             "txt" auto
             "vid" auto
             "extra" auto
-                / auto;
+                / 100%;
+        place-items: stretch stretch;
+        h1 {
+            justify-self: center;
+        }
         &_img {
             width: 100%;
         }
+    }
+    .services {
+        grid-template:
+            "title" auto
+            "img1" auto
+            "txt1" auto
+            "img2" auto
+            "txt2" auto
+            "img3" auto
+            "txt3" auto;
     }
 }
