@@ -10,6 +10,8 @@ $header-size: 4rem;
 $footer-size: 3rem;
 $margin: 2.5%;
 
+$font-min: 12px;
+$font-max: 16px;
 
 $rows: [header] $header-size [main] auto [footer] $footer-size;
 $columns: [margin-left] $margin [main] auto [margin-right] $margin;
@@ -29,7 +31,7 @@ html, body {
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: $font-max;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
     color: $text;
@@ -105,13 +107,16 @@ li {
 
 main {
     grid-area: main;
-    place-self: center center;
+    justify-self: center;
     display: grid;
-    max-width: 1280px;
+    max-width: 1024px;
     padding: 2rem 0 2rem 0;
     img {
         height: auto;
         width: 100%;
+    }
+    a {
+        color: $primary
     }
 }
 
@@ -278,7 +283,7 @@ main {
         "txt2 img2" auto
         "img3 txt3" auto
             / auto auto;
-        align-items: center;
+    align-items: center;
     h1 {
         grid-area: title;
         place-self: start start;
@@ -319,6 +324,33 @@ main {
     }
 }
 
+.contact {
+    display: grid;
+    grid-template:
+        "title ." 6.5rem
+        "form extra" auto
+            / auto;
+    place-items: start end;
+    width: 100%;
+    max-width: 1024px;
+    gap: 2rem 2rem;
+    &_form {
+        grid-area: form;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+    &_extra {
+        grid-area: extra;
+        width: 90%;
+    }
+    &_map {
+        min-height: 16rem;
+        width: 100%;
+    }
+}
+
+
 @keyframes appear {
     0% {
         opacity: 0;
@@ -341,9 +373,6 @@ main {
 }
 
 @media (max-width: 916px) {
-    html {
-        font-size: 12px;
-    }
     h1, h2 {
         text-align: center !important;
         justify-self: center !important;
@@ -373,11 +402,13 @@ main {
     }
 
     main {
+        max-width: 100%;
         place-items: center center !important;
         place-content: center center !important;
     }
     
     .txt {
+        max-width: 95%;
         padding: 0 3% 0 2%;
     }
 
@@ -387,7 +418,11 @@ main {
             "txt" auto
             / auto;
         &_txt {
+            justify-self: center;
             justify-content: start;
+        }
+        &_img {
+            justify-self: center;
         }
     }
     .about {
@@ -397,7 +432,7 @@ main {
             "txt" auto
             "vid" auto
             "extra" auto
-                / 100%;
+                / auto;
         place-items: stretch stretch;
         iframe {
             height: 56.25vw;
@@ -415,6 +450,26 @@ main {
             "img2" auto
             "txt2" auto
             "img3" auto
-            "txt3" auto;
+            "txt3" auto
+                / auto;
+    }
+    .contact {
+        grid-template: 
+            "title" auto
+            "form" auto
+            "extra" auto
+                / auto;
+    }
+}
+
+@media (min-width: 458px) and (max-width: 916px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 458px) {
+    html {
+        font-size: $font-min;
     }
 }
