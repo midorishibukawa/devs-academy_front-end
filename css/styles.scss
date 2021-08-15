@@ -4,10 +4,10 @@ $primary: #00796b;
 $title: #009688;
 $secondary: #fff;
 $text: #9b9b9b;
-$footer-color: #c4c4c4c4;
+$footer-color: #c4c4c488;
 
 $header-size: 4rem;
-$footer-size: 3rem;
+$footer-size: 2rem;
 $margin: 2.5%;
 
 $font-min: 12px;
@@ -41,9 +41,9 @@ html {
 body {
     display: grid;
     grid-template:
-        "header" 4rem
+        "header" $header-size
         "main" auto
-        "footer" 3rem
+        "footer" $footer-size
         / auto;
     overflow-x: hidden;
 }
@@ -201,12 +201,14 @@ main {
     position: fixed;
     bottom: 0;
     background-color: $footer-color;
+    backdrop-filter: blur(.5rem);
     display: flex;
     align-items: center;
     justify-content: center;
     height: $footer-size;
     width: 100%;
     color: $secondary;
+    font-size: 1rem;
 }
 
 .index {
@@ -237,7 +239,7 @@ main {
 
 .about {
     grid-template:
-        "title img" auto
+        "title ." auto
         "txt img" auto
         "vid vid" auto
         "extra extra" auto

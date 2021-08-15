@@ -23,7 +23,7 @@ html {
 
 body {
   display: grid;
-  grid-template: "header" 4rem "main" auto "footer" 3rem/auto;
+  grid-template: "header" 4rem "main" auto "footer" 2rem/auto;
   overflow-x: hidden;
 }
 
@@ -170,13 +170,15 @@ main a {
   z-index: 2;
   position: fixed;
   bottom: 0;
-  background-color: #c4c4c4c4;
+  background-color: #c4c4c488;
+  backdrop-filter: blur(0.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 3rem;
+  height: 2rem;
   width: 100%;
   color: #fff;
+  font-size: 1rem;
 }
 
 .index {
@@ -204,7 +206,7 @@ main a {
 }
 
 .about {
-  grid-template: "title img" auto "txt img" auto "vid vid" auto "extra extra" auto/1fr 1fr;
+  grid-template: "title ." auto "txt img" auto "vid vid" auto "extra extra" auto/1fr 1fr;
   place-items: start center;
 }
 .about iframe {
