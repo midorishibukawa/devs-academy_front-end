@@ -285,20 +285,19 @@ main a {
 .contact {
   display: grid;
   grid-template: "title ." 6.5rem "form extra" auto/auto;
+  place-items: start start;
   width: 100%;
   max-width: 1024px;
-  gap: 2rem 2rem;
 }
 .contact_form {
   grid-area: form;
-  place-self: start end;
   display: flex;
   flex-direction: column;
   width: 90%;
+  padding-left: 2rem;
 }
 .contact_extra {
   grid-area: extra;
-  place-self: start end;
   width: 90%;
 }
 .contact_map {
@@ -357,8 +356,6 @@ main a {
 
   main {
     max-width: 100%;
-    place-items: center center !important;
-    place-content: center center !important;
   }
 
   .txt {
@@ -395,6 +392,7 @@ main a {
 
   .contact {
     grid-template: "title" auto "form" auto "extra" auto/auto;
+    place-items: start center;
   }
 }
 @media (min-width: 458px) and (max-width: 916px) {

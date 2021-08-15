@@ -330,15 +330,15 @@ main {
         "title ." 6.5rem
         "form extra" auto
             / auto;
-    place-items: start end;
+    place-items: start start;
     width: 100%;
     max-width: 1024px;
-    gap: 2rem 2rem;
     &_form {
         grid-area: form;
         display: flex;
         flex-direction: column;
         width: 90%;
+        padding-left: 2rem;
     }
     &_extra {
         grid-area: extra;
@@ -403,8 +403,6 @@ main {
 
     main {
         max-width: 100%;
-        place-items: center center !important;
-        place-content: center center !important;
     }
     
     .txt {
@@ -459,6 +457,7 @@ main {
             "form" auto
             "extra" auto
                 / auto;
+        place-items: start center;
     }
 }
 
