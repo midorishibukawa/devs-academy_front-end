@@ -297,21 +297,13 @@ main {
     font-size: calc(12px + .3125vw);
   }
 
-  footer {
-    font-size: 16px;
-    line-height: 3rem;
-  }
-  footer h4 {
-    font-size: 20px;
-  }
-
   .style {
     grid-template: "title" auto "imgr" auto "imgl" auto/auto !important;
   }
 
   .sale_options_container {
+    max-width: 260px;
     min-width: 190px;
-    width: 40%;
   }
 
   .suggestion {
@@ -329,6 +321,27 @@ main {
   .hamburger {
     visibility: visible !important;
   }
+
+  footer {
+    grid-template: "cat" auto "inst" auto "det" auto/auto !important;
+    height: auto;
+    padding: 2rem 0;
+    place-items: center center;
+    gap: 0;
+    font-size: 16px;
+    line-height: 3rem;
+  }
+  footer h4 {
+    font-size: 20px;
+  }
+  footer .det {
+    place-self: center center;
+    text-align: center;
+    padding: 0;
+  }
+  footer .links {
+    text-align: center;
+  }
 }
 @media screen and (max-width: 512px) {
   .banner {
@@ -345,22 +358,6 @@ main {
 @media screen and (max-width: 476px) {
   html {
     font-size: 12px !important;
-  }
-
-  footer {
-    grid-template: "cat" auto "inst" auto "det" auto/auto !important;
-    height: auto;
-    padding: 2rem 0;
-    place-items: center center;
-    gap: 0;
-  }
-  footer .det {
-    place-self: center center;
-    text-align: center;
-    padding: 0;
-  }
-  footer .links {
-    text-align: center;
   }
 }
 

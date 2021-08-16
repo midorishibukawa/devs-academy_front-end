@@ -357,14 +357,6 @@ main {
         font-size: calc(12px + .3125vw);
     }
 
-    footer {
-        font-size: 16px;
-        line-height: 3rem;
-        h4 {
-            font-size: 20px;
-        }
-    }
-
     .style {
         grid-template:
             "title" auto
@@ -375,8 +367,8 @@ main {
 
     .sale {
         &_options_container {
+            max-width: 260px;
             min-width: 190px;
-            width: 40%;
         }
     }
 
@@ -401,6 +393,31 @@ main {
     .hamburger {
         visibility: visible !important;
     }
+
+    footer {
+        grid-template:
+            "cat"   auto
+            "inst"  auto
+            "det"   auto
+                / auto !important;
+        height: auto;
+        padding: $gap 0;
+        place-items: center center;
+        gap: 0;
+        font-size: 16px;
+        line-height: 3rem;
+        h4 {
+            font-size: 20px;
+        }
+        .det {
+            place-self: center center;
+            text-align: center;
+            padding: 0;
+        }
+        .links {
+            text-align: center;
+        }
+    }
 }
 
 @media screen and (max-width: 512px) {
@@ -422,25 +439,5 @@ main {
 @media screen and (max-width: 476px) {
     html {
         font-size: 12px !important;
-    }
-
-    footer {
-        grid-template:
-            "cat"   auto
-            "inst"  auto
-            "det"   auto
-                / auto !important;
-        height: auto;
-        padding: $gap 0;
-        place-items: center center;
-        gap: 0;
-        .det {
-            place-self: center center;
-            text-align: center;
-            padding: 0;
-        }
-        .links {
-            text-align: center;
-        }
     }
 }
