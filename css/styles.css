@@ -120,6 +120,23 @@ header .menu {
   font-size: 1.5rem;
   padding-right: 2rem;
 }
+header .menu.active {
+  z-index: 1;
+  position: fixed;
+  top: 7.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: calc(100% - 4rem);
+  width: 100%;
+  font-weight: 700;
+  background-color: #fff;
+  padding: 0;
+  animation: drop 0.25s;
+}
+header .menu.active .nav_menu_option {
+  animation: appear 0.5s;
+}
 header .hamburger {
   visibility: hidden;
   grid-area: menu;
