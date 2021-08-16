@@ -281,7 +281,6 @@ main {
 }
 .index .suggestion_img.right {
   grid-area: imgr;
-  justify-self: end;
   height: min-content;
   max-height: 939px;
   max-width: 507px;
@@ -310,9 +309,15 @@ main {
     grid-template: "title" auto "imgr" auto "imgl" auto/auto !important;
   }
 
+  .sale_options_container {
+    min-width: 190px;
+    width: 40%;
+  }
+
   .suggestion {
     grid-template: "imgl" auto "details" auto "imgr" auto/auto !important;
     text-align: center;
+    place-items: center center !important;
   }
 }
 @media screen and (max-width: 750px) {

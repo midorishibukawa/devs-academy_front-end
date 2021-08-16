@@ -338,7 +338,6 @@ main {
             }
             &.right  {
                 grid-area: imgr;
-                justify-self: end;
                 height: min-content;
                 max-height: 939px;
                 max-width: 507px;
@@ -374,6 +373,13 @@ main {
                 / auto !important;
     }
 
+    .sale {
+        &_options_container {
+            min-width: 190px;
+            width: 40%;
+        }
+    }
+
     .suggestion {
         grid-template:
             "imgl"      auto
@@ -381,6 +387,9 @@ main {
             "imgr"      auto
                 / auto !important;
         text-align: center;
+        place-items: center center !important;
+        &_img {
+        }
     }
 }
 
@@ -392,7 +401,6 @@ main {
     .hamburger {
         visibility: visible !important;
     }
-
 }
 
 @media screen and (max-width: 512px) {
