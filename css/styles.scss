@@ -5,6 +5,10 @@
 $margin: 10%;
 $body: 100% - 2 * $margin;
 
+* {
+    transition: color 1s, background-color .1s;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
