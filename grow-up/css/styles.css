@@ -1,0 +1,411 @@
+@import 'reset.css';
+* {
+  z-index: inherit;
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.index_img, .about_img {
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  color: #9b9b9b;
+  z-index: -1;
+}
+
+body {
+  display: grid;
+  grid-template: "header" 4rem "main" auto "footer" 2rem/auto;
+  overflow-x: hidden;
+}
+
+img {
+  object-fit: contain;
+}
+
+a, button {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
+a:hover, button:hover {
+  cursor: pointer;
+}
+
+b {
+  font-weight: 700;
+}
+
+p {
+  padding-bottom: 2rem;
+}
+
+h1, h2, h3, p, ol, ul {
+  max-width: 40rem;
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #009688;
+}
+
+.title {
+  font-size: 3.75rem;
+  font-weight: 900;
+  color: #00796b;
+  padding: 0 0 2rem 2rem;
+}
+
+.txt {
+  max-width: 30rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  color: #00796b;
+}
+
+p, li {
+  font-size: 1.25rem;
+}
+
+li {
+  list-style: inside decimal;
+}
+
+main {
+  grid-area: main;
+  justify-self: center;
+  display: grid;
+  max-width: 1024px;
+  padding: 2rem 0 2rem 0;
+}
+main img {
+  height: auto;
+  width: 100%;
+}
+main a {
+  color: #00796b;
+}
+
+.active {
+  visibility: visible !important;
+}
+
+.inactive {
+  visibility: hidden !important;
+  position: fixed !important;
+}
+
+.nav {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  display: grid;
+  grid-template: "logo menu" 4rem/1fr 1fr;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  font-size: 1.125rem;
+  color: #fff;
+  background-color: #00796b;
+}
+.nav_logo {
+  grid-area: logo;
+  height: 100%;
+  justify-content: start;
+  padding-left: 2.5%;
+}
+.nav_logo img {
+  height: 100%;
+}
+.nav_menu {
+  grid-area: menu;
+  justify-self: end;
+  display: flex;
+  flex-direction: row;
+  padding-right: 2.5%;
+}
+.nav_menu_option {
+  margin: 0 0 0 1rem;
+}
+.nav_menu.active {
+  z-index: 1;
+  position: fixed;
+  top: 4rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: calc(100% - 4rem);
+  width: 100%;
+  font-weight: 700;
+  color: #9b9b9b;
+  background-color: #fff;
+  padding: 0;
+  animation: drop 0.25s;
+}
+.nav_menu.active .nav_menu_option {
+  animation: appear 0.5s;
+}
+.nav_hamburger {
+  visibility: hidden;
+  grid-area: menu;
+  justify-self: end;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  padding-right: 10%;
+}
+
+.copyright {
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  background-color: #c4c4c488;
+  backdrop-filter: blur(0.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.index {
+  grid-template: "img txt " auto/1fr 1fr;
+  align-items: center;
+}
+.index_img {
+  grid-area: img;
+  justify-self: end;
+  height: auto;
+  width: 100%;
+  max-height: 443px;
+  max-width: 749px;
+}
+.index_txt {
+  grid-area: txt;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+  padding-right: 2.5%;
+}
+
+.about {
+  grid-template: "title ." auto "txt img" auto "vid vid" auto "extra extra" auto/1fr 1fr;
+  place-items: start center;
+}
+.about iframe {
+  grid-area: vid;
+  height: 28.125vw;
+  width: 50%;
+  margin: 2rem 0 2rem 0;
+}
+.about h1 {
+  grid-area: title;
+  justify-self: start;
+}
+.about_txt {
+  grid-area: txt;
+  justify-self: end;
+  padding-left: 2rem;
+}
+.about_img {
+  grid-area: img;
+  place-self: end center;
+  max-height: 410px;
+  max-width: 410px;
+}
+.about_extra {
+  grid-area: extra;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 60rem;
+  text-align: center;
+}
+
+.services {
+  display: grid;
+  grid-template: "title ." auto "img1 txt1" auto "txt2 img2" auto "img3 txt3" auto/auto auto;
+  align-items: center;
+}
+.services h1 {
+  grid-area: title;
+  place-self: start start;
+  padding-left: 2rem;
+}
+.services_img1 {
+  grid-area: img1;
+  justify-self: end;
+  max-height: 357px;
+  max-width: 530px;
+}
+.services_img2 {
+  grid-area: img2;
+  justify-self: start;
+  max-height: 384px;
+  max-width: 530px;
+}
+.services_img3 {
+  grid-area: img3;
+  justify-self: end;
+  max-height: 286px;
+  max-width: 530px;
+}
+.services_txt1 {
+  grid-area: txt1;
+  justify-self: start;
+  padding-right: 2rem;
+}
+.services_txt2 {
+  grid-area: txt2;
+  justify-self: end;
+  padding-left: 2rem;
+}
+.services_txt3 {
+  grid-area: txt3;
+  justify-self: start;
+  padding-right: 2rem;
+}
+
+.contact {
+  display: grid;
+  grid-template: "title ." 6.5rem "form extra" auto/auto;
+  place-items: start start;
+  width: 100%;
+  max-width: 1024px;
+}
+.contact_form {
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding-left: 2rem;
+}
+.contact_extra {
+  grid-area: extra;
+  width: 90%;
+}
+.contact_map {
+  min-height: 16rem;
+  width: 100%;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes drop {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: calc(100% - 4rem);
+  }
+}
+@media (max-width: 916px) {
+  h1, h2 {
+    text-align: center !important;
+    justify-self: center !important;
+  }
+
+  p, li {
+    text-align: justify;
+  }
+
+  h1, h2, h3, p, li {
+    padding: 0 0 1rem 0;
+  }
+
+  header {
+    padding: 0;
+  }
+  header .nav_logo {
+    padding: 0;
+  }
+  header .nav_menu {
+    visibility: hidden;
+    position: fixed;
+    top: -50%;
+  }
+  header .nav_hamburger {
+    visibility: visible;
+    position: initial;
+  }
+
+  main {
+    max-width: 100%;
+  }
+
+  .txt {
+    max-width: 95%;
+    padding: 0 3% 0 2%;
+  }
+
+  .index {
+    grid-template: "img" auto "txt" auto/auto;
+  }
+  .index_txt {
+    justify-self: center;
+    justify-content: start;
+  }
+  .index_img {
+    justify-self: center;
+  }
+
+  .about {
+    grid-template: "title" auto "img" auto "txt" auto "vid" auto "extra" auto/auto;
+    place-items: stretch stretch;
+  }
+  .about iframe {
+    height: 56.25vw;
+    width: 100%;
+  }
+  .about img {
+    width: 100%;
+  }
+
+  .services {
+    grid-template: "title" auto "img1" auto "txt1" auto "img2" auto "txt2" auto "img3" auto "txt3" auto/auto;
+  }
+
+  .contact {
+    grid-template: "title" auto "form" auto "extra" auto/auto;
+    place-items: start center;
+  }
+}
+@media (min-width: 458px) and (max-width: 916px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 458px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
