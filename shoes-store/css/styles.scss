@@ -1,0 +1,460 @@
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+$primary: #C2185B;
+$secondary: #777;
+$foreground: #000;
+$background: #FFF;
+
+$gap: 2rem;
+$double-gap: 2 * $gap;
+$margin: 2.5%;
+$double-margin: 2 * $margin;
+
+$header-size: 7.5rem;
+$header-small: 3.75rem;
+$footer-size: 15.5rem;
+
+
+@mixin normal {
+    color: $foreground;
+    background-color: $background;
+}
+
+@mixin secondary {
+    color: $secondary;
+    background-color: $background;
+}
+
+@mixin inverted {
+    color: $background;
+    background-color: $primary;
+}
+
+* {
+    z-index: inherit;
+    color: inherit
+}
+
+html {
+    scroll-behavior: smooth;
+    z-index: -1;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 16px;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    display: grid;
+    grid-template:
+        "header"    $header-size
+        "main"      auto
+        "footer"    auto
+            / auto;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    &:hover {
+        cursor: pointer;
+    }    
+}
+
+.normal {
+    @include normal;
+}
+
+
+.inverted {
+    @include inverted;
+}
+
+.active {
+   visibility: visible !important; 
+}
+
+.inactive {
+    visibility: hidden !important;
+    position: fixed !important;
+}
+
+h1 {
+    font-size: 3.75rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 2.4375rem;
+}
+
+h4 {
+    font-weight: 700;
+}
+
+p {
+    font-weight: 400;
+}
+
+
+img {
+    height: auto;
+    width: 100%;
+}
+
+header {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    height: $header-size;
+    width: 100vw;
+    max-width: 100%;
+    display: grid;
+    grid-template:
+        "logo . menu" #{$header-size}
+            / auto auto auto;
+    align-items: center;
+    box-shadow: 0 .2rem 1.25rem #0004;
+    @include secondary;
+    .logo {
+        grid-area: logo;
+        display: block;
+        padding-left: $gap;
+        img {
+            height: 5rem;
+            width: auto;
+        }
+    }
+    .menu {
+        grid-area: menu;
+        justify-self: end;
+        display: flex;
+        flex-direction: row;
+        gap: $gap;
+        font-size: 1.5rem;
+        padding-right: $gap;
+        &.active {
+            z-index: 1;
+            position: fixed;
+            top: $header-size;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: calc(100% - 4rem);
+            width: 100%;
+            font-weight: 700;
+            background-color: #fff;
+            padding: 0;
+            animation: drop .25s;
+            .nav_menu_option {
+                animation: appear .5s;
+            }
+        }
+    }
+    .hamburger {
+        visibility: hidden;
+        grid-area: menu;
+        justify-self: end;
+        font-size: 2rem;
+        padding-right: $gap
+    }
+}
+
+footer {
+    z-index: 2;
+    grid-area: footer;
+    height: $footer-size;
+    width: 100vw;
+    display: grid;
+    grid-template:
+        "det . cat inst" auto
+            / minmax(16rem, 40rem) auto minmax(12rem, 20rem) minmax(12rem, 20rem)
+            ;
+    font-size: .875rem;
+    gap: $double-gap;
+    .det {
+        grid-area: det;
+        max-width: 20rem;
+        padding-left: $gap;
+        &_logo {
+            display: block;
+            aspect-ratio: 233 / 133;
+            max-height: 133px;
+            max-width: 233px;
+            img {
+                height: auto;
+                width: 100%;
+            }
+        }
+        
+    }
+    .links {
+        max-width: 12rem;
+        padding-top: $gap
+    }
+    .cat {
+        grid-area: cat;
+    }
+    .inst {
+        grid-area: inst;
+    }   
+
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    max-width: min(100vw, 100%);
+}
+
+.index {
+    grid-template:
+        "banner" auto
+        "style" auto
+        "sale" auto
+        "suggestion" auto
+            / min(100vw, 100%);
+    place-items: stretch center;
+    background-color: $background;
+    section {
+        padding: $double-gap;
+    }
+    .banner {
+        grid-area: banner;
+        display: grid;
+        grid-template:
+            "top bottom" 100%
+                / 507fr 773fr;
+        place-items: center center;
+        max-height: 235px;
+        height: 100%;
+        width: auto;
+        max-width: 1280px;
+        padding: 0;
+        &_top {
+            grid-area: top;
+            place-self: center center;
+        }
+        &_bottom {
+            grid-area: bottom;
+        }
+    }
+    .style {
+        grid-area: style;
+        display: grid;
+        grid-template:
+            "title title" auto
+            "imgl imgr" auto
+                / 2fr 3fr;
+        gap: $double-gap;
+        align-items: center;
+        h1 {
+            grid-area: title;
+            text-align: center;
+        } 
+        .left {
+            grid-area: imgl;
+        }
+        .right {
+            grid-area: imgr;
+        }
+    }
+    .sale {
+        @include inverted;
+        display: grid;
+        grid-area: sale;
+        grid-template:
+            ". title ." auto
+            ". options ." auto
+                / minmax(0, auto) minmax(auto, 1280px) minmax(0, auto);
+        place-items: center center;
+        width: 100vw;
+        gap: $double-gap;
+        h2 {
+            grid-area: title;
+            text-align: center;
+            width: 100%;
+            color: $background;
+        } 
+        &_options {
+            grid-area: options;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: $gap;
+            &_container {
+                display: grid;
+                grid-template:
+                    "img" auto
+                    "txt" auto
+                        / auto;
+                max-width: calc(25% - 3 * $gap);
+                @include normal;
+                &_img {
+                    grid-area: img;
+                }
+                &_txt {
+                    grid-area: txt;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+    .suggestion {
+        grid-area: suggestion;
+        display: grid;
+        grid-template:
+            "details   imgr" 1fr
+            "imgl   imgr" 3fr
+                / 513fr 507fr;
+        gap: $gap;
+        max-width: 1052px;
+        &_details {
+            h3 {
+                grid-area: name;
+            }
+            button {
+                max-height: 99px;
+                max-width: 403px;
+                font-size: 2.4375rem !important;
+                margin: $gap 0 0 0;
+                padding: $gap;
+                text-align: center;
+            }
+        }
+        &_img {
+            display: flex;
+            align-self: end;
+            align-items: end;
+            &.left {
+                grid-area: imgl;
+                max-height: 663px;
+                max-width: 513px;
+            }
+            &.right  {
+                grid-area: imgr;
+                height: min-content;
+                max-height: 939px;
+                max-width: 507px;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    max-height: 939px;
+                    max-width: 507px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    html {
+        font-size: calc(12px + .3125vw);
+    }
+
+    .style {
+        grid-template:
+            "title" auto
+            "imgr"  auto
+            "imgl"  auto
+                / auto !important;
+    }
+
+    .sale {
+        &_options_container {
+            max-width: 260px;
+            min-width: 190px;
+        }
+    }
+
+    .suggestion {
+        grid-template:
+            "imgl"      auto
+            "details"   auto
+            "imgr"      auto
+                / auto !important;
+        text-align: center;
+        place-items: center center !important;
+        &_img {
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .menu {
+        position: fixed;
+        visibility: hidden;
+    }
+    .hamburger {
+        visibility: visible !important;
+    }
+
+    footer {
+        grid-template:
+            "cat"   auto
+            "inst"  auto
+            "det"   auto
+                / auto !important;
+        height: auto;
+        padding: $gap 0;
+        place-items: center center;
+        gap: 0;
+        font-size: 16px;
+        line-height: 3rem;
+        h4 {
+            font-size: 20px;
+        }
+        .det {
+            place-self: center center;
+            text-align: center;
+            padding: 0;
+        }
+        .links {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .banner {
+        grid-template:
+            "top"       auto
+            "bottom"    auto
+                / auto !important;
+        max-height: 470px !important;
+        &_top {
+            height: 100%;
+        }
+        &_bottom {
+            visibility: visible !important;
+        }
+    }
+}
+
+@media screen and (max-width: 476px) {
+    html {
+        font-size: 12px !important;
+    }
+}
