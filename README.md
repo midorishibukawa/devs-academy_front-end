@@ -6,6 +6,9 @@ Foi utilizado SASS para pré-processamento de CSS.
 Os resultados finais de cada atividade podem ser visualizados nos seguintes endereços:
 
 DH News:  https://dh-news-psi.vercel.app/
+
 LOVT:     https://lovt-psi.vercel.app/
+
 Grow Up:  https://grow-up-taupe.vercel.app/
+
 SHOES:    https://shoes-store-beta.vercel.app/
