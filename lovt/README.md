@@ -3,3 +3,4 @@ Atividade de front-end (HTML e CSS) para o curso Desenvolvimento Web Full-Stack 
 
 Foi utilizado SASS para pré-processamento de CSS.
 
+O resultado final pode ser visualizado em: https://lovt-psi.vercel.app/
