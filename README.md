@@ -1,4 +1,4 @@
-# devs-academy_front-end
+# Devs Academy: Atividades de Front-End
 Atividades de front-end (HTML, CSS, e JavaScript) para o curso Desenvolvimento Web Full-Stack Devs Academy da Digital House em parceria com a Deloitte.
 
 Foi utilizado SASS para pré-processamento de CSS.
